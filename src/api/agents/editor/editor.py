@@ -12,9 +12,9 @@ def edit(article, feedback):
     
     # Load prompty with AzureOpenAIModelConfiguration override
     configuration = AzureOpenAIModelConfiguration(
-        azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-        azure_endpoint=f"https://{os.getenv('AZURE_OPENAI_NAME')}.cognitiveservices.azure.com/"
+        azure_deployment="gpt-4",
+        api_version="2024-10-21",
+        azure_endpoint=f"https://aoai-connection.cognitiveservices.azure.com/"
     )
     override_model = {
         "configuration": configuration,

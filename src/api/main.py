@@ -19,8 +19,8 @@ load_dotenv()
 app = FastAPI()
 
 code_space = os.getenv("CODESPACE_NAME")
-app_insights = os.getenv("APPINSIGHTS_CONNECTIONSTRING")
-
+app_insights = "InstrumentationKey=79080132-752e-42b7-98b7-4b384e81c1c7;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=29cbdbd1-ce88-4c2f-beef-45b46ff1f0c0"
+print(app_insights)
 if code_space: 
     origin_8000= f"https://{code_space}-8000.app.github.dev"
     origin_5173 = f"https://{code_space}-5173.app.github.dev"

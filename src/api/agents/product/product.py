@@ -32,8 +32,8 @@ def generate_embeddings(queries: List[str]) -> str:
     )
 
     client = AzureOpenAI(
-        azure_endpoint = f"https://{os.getenv('AZURE_OPENAI_NAME')}.cognitiveservices.azure.com/", 
-        api_version=os.environ["AZURE_OPENAI_API_VERSION"],
+        azure_endpoint = "https://aoai-tuf5ibk7wt6fu.services.ai.azure.com/", 
+        api_version="2024-10-21",
         azure_ad_token_provider=token_provider
     )
 
@@ -47,7 +47,7 @@ def generate_embeddings(queries: List[str]) -> str:
 @trace
 def retrieve_products(items: List[Dict[str, any]], index_name: str) -> str:
     search_client = SearchClient(
-        endpoint=os.environ["AZURE_SEARCH_ENDPOINT"],
+        endpoint="https://srch-tuf5ibk7wt6fu.search.windows.net",
         index_name=index_name,
         credential=DefaultAzureCredential(),
     )

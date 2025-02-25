@@ -23,7 +23,7 @@ load_dotenv()
 @trace
 def execute_research(instructions: str, feedback: str = "No feedback"):
 
-    ai_project_conn_str = os.getenv("AZURE_LOCATION")+".api.azureml.ms;"+os.getenv("AZURE_SUBSCRIPTION_ID")+";"+os.getenv("AZURE_RESOURCE_GROUP")+";"+os.getenv("AZURE_AI_PROJECT_NAME")
+    ai_project_conn_str = "eastus2.api.azureml.ms;ae9ad349-d773-4022-8488-de975f01631c;rg-contosocreativewriter;ai-project-tuf5ibk7wt6fu"
 
     project_client = AIProjectClient.from_connection_string(
         credential=DefaultAzureCredential(),
